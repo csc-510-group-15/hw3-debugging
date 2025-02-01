@@ -1,7 +1,11 @@
 import rand
 
 def mergeSort(arr):
-    if (len(arr) == 1):
+
+    if not all(isinstance(x, (int, float)) for x in arr):
+        raise ValueError("Input array must contain only integers or floats")
+    
+    if (len(arr) <= 1):
         return arr
 
     half = len(arr)//2
@@ -13,18 +17,20 @@ def recombine(leftArr, rightArr):
     rightIndex = 0
     mergeArr = [None] * (len(leftArr) + len(rightArr))
     while leftIndex < len(leftArr) and rightIndex < len(rightArr):
-        if leftArr[leftIndex] < rightArr[rightIndex]:
-            rightIndex += 1
+        if leftArr[leftIndex] < rightArr[rightIndex]:           
             mergeArr[leftIndex + rightIndex] = leftArr[leftIndex]
-        else:
             leftIndex += 1
+        else:        
             mergeArr[leftIndex + rightIndex] = rightArr[rightIndex]
+            rightIndex += 1
+
+    for i in range(leftIndex, len(leftArr)):
+        mergeArr[leftIndex + rightIndex] = leftArr[i]
+        leftIndex += 1
 
     for i in range(rightIndex, len(rightArr)):
         mergeArr[leftIndex + rightIndex] = rightArr[i]
-    
-    for i in range(leftIndex, len(leftArr)):
-        mergeArr[leftIndex + rightIndex] = leftArr[i]
+        rightIndex += 1
 
     return mergeArr
 
