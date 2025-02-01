@@ -1,8 +1,17 @@
-import subprocess
+"""
+This module provides functions for generating random numbers.
+"""
+
+import random
 
 def random_array(arr):
-    shuffled_num = None
-    for i in range(len(arr)):
-        shuffled_num = subprocess.run(["shuf", "-i1-20", "-n1"], capture_output=True)
-        arr[i] = int(shuffled_num.stdout)
-    return arr
+    """
+    Populates an array with random integers between 1 and 20.
+
+    Args:
+        arr (list): A list with placeholder values.
+
+    Returns:
+        list: A list of randomly generated integers.
+    """
+    return [random.randint(1, 20) for _ in arr]
