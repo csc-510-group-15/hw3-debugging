@@ -28,8 +28,3 @@ jobs:
     - name: Save Pylint Report
       run: pylint $(git ls-files '*.py') > ./post_traces/pylint_report.txt || true  # ✅ Saves Pylint output
 
-    - name: Upload Pylint Report
-      uses: actions/upload-artifact@v4  # Allows downloading the Pylint report
-      with:
-        name: pylint-report
-        path: ./post_traces/pylint_report.txt
