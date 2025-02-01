@@ -17,7 +17,8 @@
   </a>
 </p>
 
-[![Pylint Tests](https://github.com/csc-510-group-15/hw1-a-beautiful-repo/actions/workflows/python-tests.yml/badge.svg)](https://github.com/csc-510-group-15/hw3-debugging/blob/main/.github/workflows/pylint.yml)
+[![Pylint Tests](https://github.com/csc-510-group-15/hw3-debugging/actions/workflows/pylint.yml/badge.svg)](https://github.com/csc-510-group-15/hw3-debugging/actions/workflows/pylint.yml)
+
 
 # HW3: Debugging
 
