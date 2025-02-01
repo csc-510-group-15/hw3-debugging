@@ -4,7 +4,7 @@ This module implements Merge Sort for sorting arrays of integers or floats.
 
 import rand
 
-def merge_sort(arr):
+def merge_sort(input_arr):
     """
     Sorts an array using the Merge Sort algorithm.
 
@@ -14,14 +14,13 @@ def merge_sort(arr):
     Returns:
         list: A sorted list.
     """
-    if not all(isinstance(x, (int, float)) for x in arr):
+    if not all(isinstance(x, (int, float)) for x in input_arr):
         raise ValueError("Input array must contain only integers or floats")
-    
-    if len(arr) <= 1:
-        return arr
+    if len(input_arr) <= 1:
+        return input_arr
 
-    half = len(arr) // 2
-    return recombine(merge_sort(arr[:half]), merge_sort(arr[half:]))
+    half = len(input_arr) // 2
+    return recombine(merge_sort(input_arr[:half]), merge_sort(input_arr[half:]))
 
 def recombine(left_arr, right_arr):
     """
@@ -39,10 +38,10 @@ def recombine(left_arr, right_arr):
     merged_arr = [None] * (len(left_arr) + len(right_arr))
 
     while left_index < len(left_arr) and right_index < len(right_arr):
-        if left_arr[left_index] < right_arr[right_index]:           
+        if left_arr[left_index] < right_arr[right_index]:
             merged_arr[left_index + right_index] = left_arr[left_index]
             left_index += 1
-        else:        
+        else:
             merged_arr[left_index + right_index] = right_arr[right_index]
             right_index += 1
 
@@ -58,7 +57,7 @@ def recombine(left_arr, right_arr):
     return merged_arr
 
 # Generate a random array for testing
-arr = rand.random_array([None] * 20)
-arr_out = merge_sort(arr)
+RANDOM_ARRAY = rand.random_array([None] * 20)
+SORTED_ARRAY = merge_sort(RANDOM_ARRAY)
 
-print(arr_out)
+print(SORTED_ARRAY)
