@@ -1,5 +1,5 @@
 """
-This module implements a faulty Breadth-First Search (BFS) algorithm for debugging practice.
+This module implements a Breadth-First Search (BFS) algorithm for debugging practice.
 """
 
 from collections import deque
