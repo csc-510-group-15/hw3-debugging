@@ -1,7 +1,6 @@
 """
 Unit tests for the binary_search function.
 """
-import pytest
 from binary_search import binary_search
 
 def test_valid_targets():
