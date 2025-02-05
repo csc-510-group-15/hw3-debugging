@@ -6,7 +6,6 @@ from bfs import bfs
 
 def test_bfs_disconnected():
     """Test BFS on a disconnected graph."""
-    unused_variable_b = 1
     graph = {
         'A': ['B'],
         'B': [],

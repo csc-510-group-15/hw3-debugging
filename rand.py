@@ -14,6 +14,4 @@ def random_array(arr):
     Returns:
         list: A list of randomly generated integers.
     """
-
-    unused_variable_a = 0
     return [random.randint(1, 20) for _ in arr]
