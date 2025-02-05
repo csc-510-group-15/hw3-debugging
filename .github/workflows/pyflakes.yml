@@ -1,0 +1,30 @@
+name: Pylint
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4  # Updated to latest v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyflakes
+
+    - name: Run Pyflakes
+      continue-on-error: true  # Prevents Pyflakes errors from failing the workflow
+      run: pyflakes $(git ls-files '*.py')
+
+    - name: Save Pylint Report
+      run: pyflakes $(git ls-files '*.py') > ./post_traces/pyflakes_report.txt  # ✅ Saves Pyflakes output
+
