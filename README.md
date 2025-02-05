@@ -19,6 +19,7 @@
 
 [![Pylint Tests](https://github.com/csc-510-group-15/hw3-debugging/actions/workflows/pylint.yml/badge.svg)](https://github.com/csc-510-group-15/hw3-debugging/actions/workflows/pylint.yml)
 [![Pyflakes Tests](https://github.com/csc-510-group-15/hw3-debugging/actions/workflows/pyflakes.yml/badge.svg)](https://github.com/csc-510-group-15/hw3-debugging/actions/workflows/pyflakes.yml)
+[![Bandit Tests](https://github.com/csc-510-group-15/hw3-debugging/actions/workflows/bandit.yml/badge.svg)](https://github.com/csc-510-group-15/hw3-debugging/actions/workflows/bandit.yml)
 
 # HW3: Debugging
 
