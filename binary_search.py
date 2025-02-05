@@ -1,8 +1,8 @@
 """
-This module implements a faulty Binary Search algorithm for debugging practice.
+This module implements a Binary Search algorithm for debugging practice.
 """
 
-def binary_search(elements: list, target):
+def binary_search(elements: list, target) -> int:
     """
     Performs a Binary Search for a target value on a sorted list of elements.
     Behavior is undefined for unsorted lists.
@@ -12,7 +12,7 @@ def binary_search(elements: list, target):
         target: The value to find the index of in the elements list.
 
     Returns:
-        list: The index in the list at which the target value is found, or -1 if it is not found.
+        int: The index in the list at which the target value is found, or -1 if it is not found.
     """
 
     # Set up pointers that will help us cut the possible locations in half at each iteration.
@@ -39,7 +39,6 @@ def binary_search(elements: list, target):
     # Target value is not in the elements array; return an error value.
     return -1
 
-# Example graph (Adjacency List Representation)
 test_list = [ 1, 2, 3, 5, 8, 13, 21, 34 ]
 
 # Run Binary Search on every element present in the test list.
