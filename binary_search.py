@@ -19,20 +19,23 @@ def binary_search(elements: list, target):
     low = 0
     high = len(elements) - 1
 
-    # Iterate until every element has been eliminated from contention; the search window is less than 1 element wide.
+    # Iterate until every element has been eliminated from contention;
+    # the search window is less than 1 element wide.
     while low <= high:
         # Check if the middle element of the search window is the value we're searching for.
         mid = (low + high) // 2
+
         if elements[mid] == target:
             # Exact match: return the index where we found the target.
             return mid
-        elif elements[mid] < target:
-            # Middle element is too low: use the higher half of the search window.
+
+        if elements[mid] < target:
+            # Middle element TOO LOW: use the higher half of the search window.
             low = mid + 1
         else:
-            # Middle element is too high: use the lower half of the search window.
+            # Middle element TOO HIGH: use the lower half of the search window.
             high = mid - 1
-    
+
     # Target value is not in the elements array; return an error value.
     return -1
 
